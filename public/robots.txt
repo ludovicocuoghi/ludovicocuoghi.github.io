@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ludovicocuoghi.github.io/sitemap.xml

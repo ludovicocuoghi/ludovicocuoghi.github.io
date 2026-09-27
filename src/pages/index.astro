@@ -11,7 +11,7 @@ const description = 'Ludovico Cuoghi is a Data Scientist II at QuantumBlack, AI 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b1220" />
+    <meta name="theme-color" content="#101820" />
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -44,7 +44,7 @@ const description = 'Ludovico Cuoghi is a Data Scientist II at QuantumBlack, AI 
         </nav>
         <div class="nav-actions">
           <button class="theme-toggle" type="button" aria-label="Switch to light theme">
-            <span aria-hidden="true">◐</span><span class="theme-label">Theme</span>
+            <span aria-hidden="true">☀</span>
           </button>
           <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
             <span></span><span></span>
@@ -55,13 +55,17 @@ const description = 'Ludovico Cuoghi is a Data Scientist II at QuantumBlack, AI 
 
     <main id="main">
       <section class="hero section-shell" aria-labelledby="hero-title">
-        <p class="eyebrow">DATA SCIENTIST · TOKYO</p>
-        <h1 id="hero-title">Ludovico Cuoghi</h1>
-        <p class="hero-role">Data Scientist II at QuantumBlack, AI by McKinsey</p>
-        <p class="hero-intro">I design and build AI agents and end-to-end applications for clients, from architecture and data pipelines to evaluation and deployment. I focus on reliability and reducing hallucinations.</p>
-        <div class="hero-actions">
-          <a class="button" href="#work">View projects <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        <div class="hero-heading">
+          <p class="eyebrow">DATA SCIENTIST · TOKYO</p>
+          <h1 id="hero-title">Ludovico Cuoghi</h1>
+          <p class="hero-role">Data Scientist II at QuantumBlack, AI by McKinsey</p>
+        </div>
+        <div class="hero-detail">
+          <p class="hero-intro">I design and build AI agents and end-to-end applications for clients, from architecture and data pipelines to evaluation and deployment. I focus on reliability and reducing hallucinations.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">View projects <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </section>
 
@@ -97,8 +101,12 @@ const description = 'Ludovico Cuoghi is a Data Scientist II at QuantumBlack, AI 
             {experience.map((job) => (
               <article class="timeline-row">
                 <span class="timeline-period">{job.period}</span>
-                <div><h3>{job.role}</h3><p>{job.company} · {job.location}</p></div>
-                <p class="timeline-summary">{job.summary}</p>
+                <span class="timeline-marker" aria-hidden="true"></span>
+                <div class="timeline-content">
+                  <h3>{job.role}</h3>
+                  <p>{job.company} · {job.location}</p>
+                  <p class="timeline-summary">{job.summary}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -168,6 +176,8 @@ const description = 'Ludovico Cuoghi is a Data Scientist II at QuantumBlack, AI 
 
       function updateThemeLabel() {
         themeButton?.setAttribute('aria-label', `Switch to ${root.dataset.theme === 'dark' ? 'light' : 'dark'} theme`);
+        const icon = themeButton?.querySelector('span');
+        if (icon) icon.textContent = root.dataset.theme === 'dark' ? '☀' : '☾';
       }
       updateThemeLabel();
       themeButton?.addEventListener('click', () => {

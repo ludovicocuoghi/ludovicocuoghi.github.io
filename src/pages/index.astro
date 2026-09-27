@@ -24,7 +24,7 @@ const description = 'Ludovico Cuoghi is a Data Scientist II at QuantumBlack, AI 
     <title>{title}</title>
     <script is:inline>
       try {
-        document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'dark';
       } catch {
         document.documentElement.dataset.theme = 'dark';
       }
@@ -172,7 +172,7 @@ const description = 'Ludovico Cuoghi is a Data Scientist II at QuantumBlack, AI 
       updateThemeLabel();
       themeButton?.addEventListener('click', () => {
         root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-        try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+        try { localStorage.setItem('portfolio-theme', root.dataset.theme); } catch {}
         updateThemeLabel();
       });
 

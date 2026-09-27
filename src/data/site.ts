@@ -11,7 +11,7 @@ export const experience = [
     role: "Data Scientist II",
     company: "QuantumBlack, AI by McKinsey",
     location: "Tokyo, Japan",
-    summary: "Data science and AI projects for clients.",
+    summary: "AI agents, application architecture, and evaluation for client work.",
   },
   {
     period: "2023 — 2026",

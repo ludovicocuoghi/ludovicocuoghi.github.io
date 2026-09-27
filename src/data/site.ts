@@ -40,7 +40,6 @@ export const featuredProjects = [
     stack: ["Python", "Qdrant", "LangChain", "Streamlit"],
     url: "https://github.com/ludovicocuoghi/rag_reranker_project",
     linkText: "Explore the repository",
-    visual: "retrieval",
   },
   {
     number: "02",
@@ -51,7 +50,6 @@ export const featuredProjects = [
     stack: ["Python", "PyTorch", "XGBoost", "NLP"],
     url: "https://www.kaggle.com/ludovicocuoghi/code",
     linkText: "Browse Kaggle notebooks",
-    visual: "kaggle",
   },
   {
     number: "03",
@@ -62,7 +60,6 @@ export const featuredProjects = [
     stack: ["C++", "SFML", "Game systems"],
     url: "https://github.com/ludovicocuoghi/roman_paradox",
     linkText: "See the game project",
-    visual: "rome",
   },
 ] as const;
 
